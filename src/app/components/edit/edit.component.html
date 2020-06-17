@@ -1,0 +1,84 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    {{ title }}
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Employee First Name</label>
+        <input type="text" class="form-control" formControlName="Fname" #Fname [(ngModel)] = "coin.Fname"/>
+      </div>
+      <div *ngIf="angForm.controls['Fname'].invalid && (angForm.controls['Fname'].dirty || angForm.controls['Fname'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['Fname'].errors.required">
+          Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Employee Last Name</label>
+        <input type="text" class="form-control" formControlName="Lname" #Lname [(ngModel)] = "coin.Lname"/>
+      </div>
+      <div *ngIf="angForm.controls['Lname'].invalid && (angForm.controls['Lname'].dirty || angForm.controls['Lname'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['Lname'].errors.required">
+          Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Employee Mobile No.</label>
+        <input type="number" class="form-control" formControlName="Mob_No" #Mob_No [(ngModel)] = "coin.Mob_No"/>
+      </div>
+      <div *ngIf="angForm.controls['Mob_No'].invalid && (angForm.controls['Mob_No'].dirty || angForm.controls['Mob_No'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['Mob_No'].errors.required">
+          Mobile number is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Birthdate</label>
+        <input type="date" class="form-control" formControlName="Bdate" #Bdate [(ngModel)] = "coin.Bdate"/>
+      </div>
+      <div *ngIf="angForm.controls['Bdate'].invalid && (angForm.controls['Bdate'].dirty || angForm.controls['Bdate'].touched)" class="alert alert-danger">
+        <div *ngIf="Birthdate.controls['Bdate'].Birthdates.required">
+          Birthdate is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Employee Address</label>
+        <input type="text" class="form-control" formControlName="Address" #Address [(ngModel)] = "coin.Address"/>
+      </div>
+      <div *ngIf="angForm.controls['Address'].invalid && (angForm.controls['Address'].dirty || angForm.controls['Address'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.Addressntrols['Address'].Addressrs.required">
+          Address is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Sex</label>
+        <input type="text" class="form-control" formControlName="Sex" #Sex [(ngModel)] = "coin.Sex"/>
+      </div>
+      <div *ngIf="angForm.controls['Sex'].invalid && (angForm.controls['Sex'].dirty || angForm.controls['Sex'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.Sex['Sex'].Sex.required">
+          Sex is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Salary</label>
+        <input type="number" class="form-control" formControlName="Salary" #Salary [(ngModel)] = "coin.Salary"/>
+      </div>
+      <div *ngIf="angForm.controls['Salary'].invalid && (angForm.controls['Salary'].dirty || angForm.controls['Salary'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['Salary'].errors.required">
+          Salary is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Department Number</label>
+        <input type="text" class="form-control" formControlName="Dno" #Dno [(ngModel)] = "coin.Dno"/>
+      </div>
+      <div *ngIf="angForm.controls['Dno'].invalid && (angForm.controls['Dno'].dirty || angForm.controls['Dno'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['Dno'].errors.required">
+          Department Number is required.
+        </div>
+      </div>
+        <div class="form-group">
+          <button (click)="updateCoin(Fname.value, Lname.value, Mob_No.value, Bdate.value, Address.value, Sex.value, Salary.value, Dno.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Add</button>
+        </div>
+    </form>
+  </div>
+</div>
